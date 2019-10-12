@@ -30,7 +30,12 @@ const NewNote = withRouter(({ history }) => {
   const [content, setContent] = useState('');
 
   const [createNote] = useMutation(NEW_NOTE, {
-    update(cache, { data: createdNewNote }) {
+    update(
+      cache,
+      {
+        data: { createNote: createdNewNote },
+      }
+    ) {
       const { allNotes } = cache.readQuery({ query: NOTES_QUERY });
       cache.writeQuery({
         query: NOTES_QUERY,
