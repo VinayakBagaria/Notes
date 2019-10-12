@@ -29,6 +29,7 @@ const typeDefs = `
     type Mutation {
         createNote(input: NoteInput): Note
         updateNote(_id: ID!, input: NoteUpdateInput): Note
+        deleteNote(_id: ID!) : Note
     }
 `;
 

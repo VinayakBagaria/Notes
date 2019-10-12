@@ -15,6 +15,9 @@ const resolvers = {
         },
         async updateNote(root, { _id, input }) {
             return await Note.findByIdAndUpdate({ _id }, input, { new: true });
+        },
+        async deleteNote(root, { _id }) {
+            return await Note.findByIdAndRemove({ _id });
         }
     }
 }
