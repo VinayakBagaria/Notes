@@ -12,6 +12,9 @@ const resolvers = {
     Mutation: {
         async createNote(root, { input }) {
             return await Note.create(input);
+        },
+        async updateNote(root, { _id, input }) {
+            return await Note.findByIdAndUpdate({ _id }, input, { new: true });
         }
     }
 }

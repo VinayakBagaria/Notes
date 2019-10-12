@@ -21,8 +21,14 @@ const typeDefs = `
         content: String!
     }
 
+    input NoteUpdateInput {
+        title: String,
+        content: String
+    }
+
     type Mutation {
         createNote(input: NoteInput): Note
+        updateNote(_id: ID!, input: NoteUpdateInput): Note
     }
 `;
 
