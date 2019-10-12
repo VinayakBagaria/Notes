@@ -45,7 +45,6 @@ const NewNote = withRouter(({ history }) => {
       variables: {
         title,
         content,
-        date: Date.now(),
       },
     });
     history.push('/');
