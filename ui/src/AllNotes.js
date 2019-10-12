@@ -31,22 +31,23 @@ const AllNotes = () => {
       <div className="allnotes-page">
         <div className="columns is-multiline">
           {data.allNotes.length > 0
-            ? data.allNotes.map((item, i) => (
-                <div className="column is-one-third" key={i}>
+            ? data.allNotes.map(note => (
+                <div className="column is-one-third" key={note._id}>
                   <div className="card">
                     <header className="card-header">
-                      <p className="card-header-title">Component</p>
+                      <p className="card-header-title">{note.title}</p>
                     </header>
                     <div className="card-content">
                       <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. Lorem ipsum dolor sit
-                        amet.
+                        {note.content}
                         <br />
                       </div>
                     </div>
                     <footer className="card-footer">
-                      <Link to={`note/${i}`} className="card-footer-item">
+                      <Link
+                        to={`note/${note._id}`}
+                        className="card-footer-item"
+                      >
                         Edit
                       </Link>
                       <a href="#" className="card-footer-item">
