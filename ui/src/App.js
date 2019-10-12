@@ -9,13 +9,23 @@ function App() {
   return (
     <Router>
       <div>
-        <nav className="App-header" role="navigation" aria-label="main navigation">
+        <nav
+          className="navbar App-header"
+          role="navigation"
+          aria-label="main navigation"
+        >
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item">NotesQL</Link>
+            <Link to="/" className="navbar-item">
+              NotesQL
+            </Link>
           </div>
           <div className="navbar-end">
-            <Link to="/" className="navbar-item">All Notes</Link>
-            <Link to="/newnote" className="navbar-item">New Note</Link>
+            <Link to="/" className="navbar-item">
+              All Notes
+            </Link>
+            <Link to="/newnote" className="navbar-item">
+              New Note
+            </Link>
           </div>
         </nav>
         <Route exact path="/" component={AllNotes} />
