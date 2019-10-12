@@ -13,6 +13,7 @@ const typeDefs = `
 
     type Query {
         allNotes: [Note]
+        getNote(_id: ID!): Note
     }
 
     input NoteInput {
