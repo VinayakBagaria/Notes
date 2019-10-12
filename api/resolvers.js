@@ -5,6 +5,11 @@ const resolvers = {
         async allNotes() {
             return await Note.find();
         }
+    },
+    Mutation: {
+        async createNote(root, { input }) {
+            return await Note.create(input);
+        }
     }
 }
 

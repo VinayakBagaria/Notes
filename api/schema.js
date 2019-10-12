@@ -14,6 +14,15 @@ const typeDefs = `
     type Query {
         allNotes: [Note]
     }
+
+    input NoteInput {
+        title: String!,
+        content: String!
+    }
+
+    type Mutation {
+        createNote(input: NoteInput): Note
+    }
 `;
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers });
